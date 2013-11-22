@@ -1,59 +1,58 @@
 #The import libraries
 import math
-import tkinter
 from tkinter import *
 
 #Here are the functions for making the calculations
 def CalcDCFromRC(R_C):
-	ans = 18000 / math.pi / R_C #checked ok
+	ans = 18000 / math.pi / R_C
 	return round(ans, 10)
 def CalcDCFromLS(THETA_S, LS): 
-	ans = 200 * (THETA_S / LS) #checked ok
+	ans = 200 * (THETA_S / LS)
 	return round(ans, 10)
 def CalcLSFromDC(THETA_S, D_C):
-	ans = 200 * (THETA_S / D_C) #checked ok
+	ans = 200 * (THETA_S / D_C)
 	return round(ans, 10)
 def CalcTHETASFromDC(LS, D_C):
-	ans = LS * D_C / 200 #checked ok
+	ans = LS * D_C / 200
 	return round(ans, 10)
 def CalcDELTA(L, R_C):
-	ans = 180 * L / (math.pi * R_C) #checked ok
+	ans = 180 * L / (math.pi * R_C)
 	return round(ans, 10)
 def CalcTHETASFromRC(LS, R_C):
-	ans = math.degrees(LS / 2 * R_C) #checked ok
+	ans = math.degrees(LS / 2 * R_C)
 	return round(ans, 10)
 def	CalcXC(LS, THETA_S):
-	ans = (LS / 100) * (100 - 0.0030462 * math.pow(THETA_S, 2)) #checked ok
+	ans = (LS / 100) * (100 - 0.0030462 * math.pow(THETA_S, 2))
 	return round(ans, 10)
 def CalcYC(LS, THETA_S):
-	ans = (LS / 100) * (0.58178 * THETA_S - 0.000012659 * math.pow(THETA_S, 3)) #checked ok
+	ans = (LS / 100) * (0.58178 * THETA_S - 0.000012659 * math.pow(THETA_S, 3))
 	return round(ans, 10)
 def CalcP(Y_C, R_C, THETA_S):
-	ans = Y_C - R_C * (1.0 - math.cos(math.radians(THETA_S))) #need example
+	ans = Y_C - R_C * (1.0 - math.cos(math.radians(THETA_S)))
 	return round(ans, 10)
 def CalcA(THETA_S, LS):
-	ans = 20000 * THETA_S / math.pow(LS, 2) #checked ok
+	ans = 20000 * THETA_S / math.pow(LS, 2)
 	return round(ans, 10)
 def CalcK(LS, A):
-	ans = 0.5 * LS - 0.000127 * math.pow(A, 2) * math.pow(LS / 100, 5) #checked ok
+	ans = 0.5 * LS - 0.000127 * math.pow(A, 2) * math.pow(LS / 100, 5)
 	return round(ans, 10)
 def CalcTS(R_C, P, DELTA, K):
-	ans = (R_C + P) * math.tan(math.radians(DELTA / 2)) + K #need example
+	ans = (R_C + P) * math.tan(math.radians(DELTA / 2)) + K
 	return round(ans, 10)
 def CalcES(R_C, P, DELTA):
-	ans = (R_C + P) * (math.tan(math.radians(DELTA / 2)) * math.tan(math.radians(DELTA / 4))) + P #need example
+	ans = (R_C + P) * (math.tan(math.radians(DELTA / 2)) * math.tan(math.radians(DELTA / 4))) + P
 	return round(ans, 10) 
 def CalcLT(X_C, Y_C, THETA_S):
-	ans = X_C - (Y_C * (1 / math.tan(math.radians(THETA_S)))) #correct
+	ans = X_C - (Y_C * (1 / math.tan(math.radians(THETA_S))))
 	return round(ans, 10)
 def CalcST(Y_C, THETA_S):
-	ans = Y_C / math.sin(math.radians(THETA_S)) #correct
+	ans = Y_C / math.sin(math.radians(THETA_S))
 	return round(ans, 10) 
 def CalcLC(LS, A):
-	ans = LS - 0.00034 * math.pow(A, 2) * math.pow((LS / 100), 5) #correct
+	ans = LS - 0.00034 * math.pow(A, 2) * math.pow((LS / 100), 5)
 	return round(ans, 10)
 def CalcDELTAC(DELTA, THETA_S):
-	ans = DELTA - 2 * THETA_S #checked ok
+	ans = DELTA - 2 * THETA_S
 	return round(ans, 10) 
 
 #Functions for the GUI
